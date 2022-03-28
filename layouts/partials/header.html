@@ -1,12 +1,17 @@
 <header>
-	<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-	{{ with .Site.Menus.main }}
-	<nav>
-		<ul>
-			{{ range . }}
-			<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+	<p>697 38 28 72 - info@afrimavalencia.com</p>
+	<div class="ui borderless stackable huge menu">
+		<a href="{{ .Site.BaseURL }}" class="header item"><img class="ui tiny fluid image" src="/img/afrima-logo-big.png" alt="log afrima"></a>
+		<div class="right menu">
+			{{ with .Site.Menus.main }}
+				{{ range . }}
+				<a href="{{ .URL | relURL }}" class="item">{{ .Name }}</a>
+				{{ end }}
 			{{ end }}
-		</ul>
-	</nav>
-	{{ end }}
+			<div class="item">
+				<button class="ui button"><a href="https://app.fynkus.com/login/" target="_blank" rel="noopener noreferrer">Despacho Online 24H</a></button>
+		  	</div>
+		</div>
+	</div>
+	<br>
 </header>
