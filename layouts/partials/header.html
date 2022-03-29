@@ -1,20 +1,33 @@
 <header>
-	<div class="ui">
-		<p>{{ .Site.Params.telefono }} - {{ .Site.Params.email }}</p>
+	<div class="row bg-primary text-light ">
+		{{ .Site.Params.telefono }} - {{ .Site.Params.email }}
 	</div>
 	
-	<div class="ui borderless stackable huge menu">
-		<a href="{{ .Site.BaseURL }}" class="header item"><img class="ui tiny fluid image" src="{{ .Site.Params.logoPath }}" alt="logo afrima"></a>
-		<div class="right menu">
-			{{ with .Site.Menus.main }}
-				{{ range . }}
-				<a href="{{ .URL | relURL }}" class="item">{{ .Name }}</a>
+	<div class="row g-2">	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a href="{{ .Site.BaseURL }}" class="navbar-brand">
+				<img src="{{ .Site.Params.logoPath }}" alt="logo afrima" style="max-width: 100px;">
+			</a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarScroll">
+			<ul class="navbar-nav justify-content-end" style="--bs-scroll-height: 100px;">
+				{{ with .Site.Menus.main }}
+					{{ range . }}
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="{{ .URL | relURL }}">{{ .Name }}</a>
+						</li>
+					{{ end }}
 				{{ end }}
-			{{ end }}
-			<div class="item">
-				<button class="ui button"><a href="https://app.fynkus.com/login/" target="_blank" rel="noopener noreferrer">Despacho Online 24H</a></button>
-		  	</div>
+				<div class="nav-item">
+					<a href="https://app.fynkus.com/login/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Despacho Online 24H</a>
+				</div>
+			</ul>
+		  </div>
 		</div>
+	  </nav>
 	</div>
 	<br>
 </header>
