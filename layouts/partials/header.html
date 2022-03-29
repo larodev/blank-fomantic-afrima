@@ -1,7 +1,10 @@
 <header>
-	<p>697 38 28 72 - info@afrimavalencia.com</p>
+	<div class="ui">
+		<p>{{ .Site.Params.telefono }} - {{ .Site.Params.email }}</p>
+	</div>
+	
 	<div class="ui borderless stackable huge menu">
-		<a href="{{ .Site.BaseURL }}" class="header item"><img class="ui tiny fluid image" src="/img/afrima-logo-big.png" alt="log afrima"></a>
+		<a href="{{ .Site.BaseURL }}" class="header item"><img class="ui tiny fluid image" src="{{ .Site.Params.logoPath }}" alt="logo afrima"></a>
 		<div class="right menu">
 			{{ with .Site.Menus.main }}
 				{{ range . }}
