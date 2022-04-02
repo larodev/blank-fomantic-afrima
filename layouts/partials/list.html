@@ -1,0 +1,21 @@
+<h2>{{ .title }}</h2>
+				<p>{{ .subtitle }}</p>
+				<ul class="list-unstyled">
+					{{ range .items }}
+					<li class="row py-2">
+						{{ if .icon }}
+						<div class="col-md-auto">
+							<i class="bi-{{ .icon }}" style="font-size: 2rem; color:
+								var(--bs-primary);"></i>
+						</div>
+						{{ end }}
+						<div class="col">
+							{{ if .title }}
+							<b>{{ .title }}:</b>
+							{{ end }}
+							{{ .text }}
+
+						</div>
+					</li>
+					{{ end }}
+				</ul>
