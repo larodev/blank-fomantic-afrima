@@ -1,6 +1,21 @@
-<footer class="ui footer">
-	<hr>
-	<p>Un servicio profesional que ofrece calidad, ahorro, seguridad, comodidad y accesibilidad a nuestros clientes.</p>
-	<p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
-	<p><a href="/politica-privacidad/">Política de privacidad</a></p>
+<footer class="text-light bg-dark px-4">
+	<div class="container">
+		<div class="row border-bottom border-secondary py-4">
+			<div class="col-md-auto py-4 d-flex justify-content-center align-items-center">
+				<img src="{{ .Site.Params.logoPath }}" alt="logo afrima" style="max-width: 100px;">
+			</div>
+			<div class="col py-2 col-lg-5 d-flex justify-content-center align-items-center">
+				<small>{{ .Site.Params.slogan}}</small>
+			</div>
+		</div>
+		<div class="row py-2 text-secondary text-sm-center">
+			<div class="col-md-auto">
+				<p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}" class="link-secondary">{{ .Site.Title }}</a></p>
+			</div>
+			<div class="col text-md-end text-sm-center">
+				<a href="/politica-privacidad/" class="link-secondary">Política de privacidad</a>
+			</div>
+		</div>	
+	</div>
 </footer>
+
