@@ -1,8 +1,7 @@
 {{ define "main" }}
 	<main>
-		<article class="ui main text container">
-			<h1 class="ui header">{{ .Title }}</h1>
-			<!-- <time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Format "02.01.2006 15:04" }}</time> -->
+		<article class="container py-2" style="margin-bottom: 3em;">
+			<h1 class="py-2">{{ .Title }}</h1>
 			<div>
 				{{ .Content }}
 			</div>
