@@ -1,0 +1,38 @@
+{{ define "main" }}
+<main>
+	<article>
+		<div class="container">
+			<div class="row p-2 py-4">
+				<div class="col px-5 d-flex align-items-center cust-border">
+					<h1>{{ .Title }}</h1>
+				</div>
+				<div class="col-lg px-5">
+					{{ .Content }}
+				</div>
+			</div>
+		</div>
+		{{ range .Params.Lists }}
+		<div class="p-2 py-4 bg-light">
+			<div class="container">
+				<div class="row">
+					{{ if .image }}
+					<div class="col d-flex justify-content-center align-items-center py-2">
+						<img class="img-fluid border border-5 rounded-2 border-white" src="{{ .image }}">
+					</div>
+					<div class="col-lg py-2">
+						{{ partial "list" . }}
+					</div>
+					{{ else }}
+					{{ partial "list" . }}
+					{{ end }}
+	
+				</div>
+			</div>
+		</div>
+		{{end}}
+
+		{{ partial "contact-banner" . }}
+	</article>
+</main>
+<!-- {{ partial "sidebar.html" . }} -->
+{{ end }}
