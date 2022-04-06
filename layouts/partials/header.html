@@ -1,55 +1,48 @@
 <header>
-	{{ partial "info-banner" . }}
+	{{ with .Site.Params.Contact }}
+	{{ partial "top-banner" . }}
+	{{ end }}
 	<div class="bg-light">
 		<div class="container">
 			<div class="row px-4 py-4">
 				<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-						<a href="{{ .Site.BaseURL }}" class="navbar-brand">
-							<img src="{{ .Site.Params.logoPath }}" alt="logo afrima" style="max-width:
-								100px;">
-						</a>
-					  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+					<a href="{{ .Site.BaseURL }}" class="navbar-brand">
+						<img src="{{ .Site.Params.logoPath }}" alt="Logo {{ .Site.Title }}" style="max-width:100px;">
+					</a>
+					
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarToggler" aria-controls="navbarToggler"
+						aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
-					  </button>
-					  <div class="collapse navbar-collapse " id="navbarToggler">
-						<ul class="navbar-nav  mb-2 mb-lg-0 ">
+					</button>
+					<div class="collapse navbar-collapse"id="navbarToggler">
+						<ul class="navbar-nav mb-2 mb-lg-0">
 							{{ with .Site.Menus.main }}
 							{{ range . }}
 							<li class="nav-item">
 								<a class="nav-link text-primary" aria-current="page" href="{{ .URL |
-									relURL }}">{{
-									.Name }}</a>
+									relURL }}">{{ .Name }}</a>
 							</li>
 							{{ end }}
 							{{ end }}
 						</ul>
+						{{ with .Site.Menus.button }}
+						{{ range . }}
 						<div class="nav-item">
-							<a href="https://app.fynkus.com/login/" target="_blank" rel="noopener
-								noreferrer" class="btn btn-primary">Despacho Online 24H</a>
+							<a href="{{ .URL | relURL }}" target="_blank" rel="noopener
+								noreferrer" class="btn btn-primary">{{ .Name }}</a>
 						</div>
+						&nbsp;
+						{{ end }}
+						{{ end }}
 					</div>
-				  </nav>
+					
+				</nav>
 			</div>
 		</div>
-		
+
 	</div>
-	
+
 	<br>
 </header>
-<div class="cust-sticky px-4">
-	<div class="p-2">
-		<div class="cust-circle bg-secondary d-flex justify-content-center align-items-center">
-			<a class="link-light" href="tel:{{ .Site.Params.countryCode }}{{ .Site.Params.telefono }}" aria-label="telefono">
-				<i class=" text-light bi-phone-vibrate p-1"></i>
-			</a>
-		</div>
-	</div>
-	<div class="p-2" >
-		<div class="cust-circle d-flex justify-content-center align-items-center" style="background-color: #25D366;">
-			<a class="link-light" href="https://api.whatsapp.com/send?phone=34697382872&text=Consulta%20AFRIMA%20VALENCIA" aria-label="whatsapp link">
-				<i class="bi-whatsapp p-1"></i>
-			</a>
-		</div>
-	</div>
-</div>
+{{ partial "contact-sticky" . }}
