@@ -2,10 +2,11 @@
     <div class="container">
         <div class="row ">
             <div class="col text-center text-light fs-5">
-                {{ .Site.Params.bannercontacto}}
+                {{ .Site.Params.Banner.Text}}
             </div>
             <div class="col text-center">
-                <button class="btn btn-light text-primary">{{ .Site.Params.botoncontacto}}</button>
+                <a href="{{ .Site.Params.Banner.buttonlink}}" target="_blank" rel="noopener
+								noreferrer" class="btn btn-light text-primary">{{ .Site.Params.Banner.buttontext}}</a>
             </div>
         </div>        
     </div>

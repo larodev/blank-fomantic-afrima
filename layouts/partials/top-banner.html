@@ -1,0 +1,14 @@
+
+
+<div class="bg-primary text-light px-2 py-2">
+    <div class="container">
+        <div class="row">
+			{{ range . }}
+            <div class="col-md-auto">
+                <i class="bi-{{ .icon }}"></i>&nbsp;
+                {{ .text }}
+            </div>
+            {{ end }}
+        </div>
+    </div>    
+</div>
